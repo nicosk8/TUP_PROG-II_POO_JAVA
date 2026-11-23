@@ -1,0 +1,56 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><element><id>UMLClass</id><coordinates><x>126</x><y>119</y><w>140</w><h>42</h></coordinates><panel_attributes>Application
+&lt;&lt;javafx.application&gt;&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>126</x><y>217</y><w>182</w><h>70</h></coordinates><panel_attributes>RegistroProductosSerializado
+--
+--
++start(stage: Stage)
+_+main(args: String[])_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>441</x><y>119</y><w>266</w><h>266</h></coordinates><panel_attributes>ViewsController
+--
+-txtNombre: TextField
+-txtPrecio: TextField
+-cmbCategoria: ComboBox&lt;Categoria&gt;
+-btnAgregar: Button
+-btnEliminar: Button
+-tblProductos: TableView&lt;Producto&gt;
+-colNombre: TableColumn&lt;Producto, String&gt;
+-colPrecio: TableColumn&lt;Producto, Double&gt;
+-colCategoria: TableColumn&lt;Producto, Categoria&gt;
+-productos: List&lt;Producto&gt;
+--
++initialize(url: URL, rb: ResourceBundle)
+-agregar(event: ActionEvent)
+-eliminar(event: ActionEvent)
++validarDatos(): String
++esTextoVacio(texto: String): boolean
++esPrecioValido(texto: String): boolean
++actualizarTabla()
++limpiarFormulario()
++mostrarMensaje(mensaje: String)
++guardarArchivo()
++cargarArchivo()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>847</x><y>217</y><w>126</w><h>63</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Initializable
+--
++initialize(url, rb)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>469</y><w>294</w><h>119</h></coordinates><panel_attributes>Producto
+--
+_-serialVersionUID: long_
+-nombre: String
+-precio: double
+-categoria: Categoria
+--
++Producto(nombre: String, precio: double, categoria: Categoria)
++getNombre(): String
++getPrecio(): double
++getCategoria(): Categoria</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>847</x><y>504</y><w>126</w><h>49</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Serializable</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>126</x><y>469</y><w>168</w><h>98</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Categoria
+--
+ALIMENTOS
+BEBIDAS
+LIMPIEZA
+ELECTRONICA
+OTROS</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>301</x><y>231</y><w>154</w><h>28</h></coordinates><panel_attributes>lt=&lt;..
+Utiliza/Dependende de </panel_attributes><additional_attributes>200;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>175</x><y>154</y><w>70</w><h>77</h></coordinates><panel_attributes>lt=&lt;&lt;-
+Hereda de...</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>231</y><w>161</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;.
+Implementa</panel_attributes><additional_attributes>210;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>553</x><y>378</y><w>84</w><h>105</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+Tiene muchos...</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>287</x><y>518</y><w>147</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;-
+Tiene un...</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>707</x><y>518</y><w>154</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;.
+Implementa</panel_attributes><additional_attributes>200;20;10;20</additional_attributes></element></diagram>
