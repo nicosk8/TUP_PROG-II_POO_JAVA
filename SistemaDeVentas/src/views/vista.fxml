@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VistaController">
+   <children>
+      <VBox layoutX="-6.0" layoutY="-4.0" prefHeight="500.0" prefWidth="900.0" spacing="10.0">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label prefHeight="18.0" prefWidth="249.0" text="Sistema de Ventas">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="98.0" text="Productos">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tblProductos" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="colNombre" prefWidth="196.80002516508102" text="Producto" />
+                            <TableColumn fx:id="colPrecio" prefWidth="150.39996337890625" text="Precio" />
+                              <TableColumn fx:id="colStock" prefWidth="79.19998168945312" text="Stock" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="116.0" text="Carrito">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tblCarrito" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="colItemNombre" prefWidth="127.99999845027924" text="Producto" />
+                            <TableColumn fx:id="colItemPrecio" prefWidth="83.20001220703125" text="Precio unit." />
+                              <TableColumn fx:id="colItemCantidad" prefWidth="80.0001220703125" text="Cantidad" />
+                              <TableColumn fx:id="colItemSubtotal" prefWidth="137.599853515625" text="Subtotal" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#handleAgregar" prefHeight="26.0" prefWidth="151.0" text="Agregar al carrito" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="30.0" text="Total:" />
+                  <Label fx:id="lblTotal" prefHeight="18.0" prefWidth="169.0" text="\$0,00" />
+                  <Button fx:id="btnConfirmar" mnemonicParsing="false" onAction="#handleConfirmar" text="Confirmar compra" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

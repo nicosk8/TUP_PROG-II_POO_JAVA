@@ -1,0 +1,3 @@
+TICKET DE COMPRA
+Monitor | Cantidad: 1 | Precio unitario: $ 120000.0 | Subtotal: $ 120000.0
+TOTAL: $ 120000.0
